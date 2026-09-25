@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "author": "Codex",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {
+        "flashSize": "8",
+        "psramSize": "8",
+        "serialInterface": "USB_SERIAL_JTAG"
+      }
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "tft",
+      "top": -10,
+      "left": 360,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnA",
+      "top": 260,
+      "left": -120,
+      "attrs": {
+        "color": "blue",
+        "label": "Player A"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnB",
+      "top": 340,
+      "left": -120,
+      "attrs": {
+        "color": "orange",
+        "label": "Player B"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnAp",
+      "top": 220,
+      "left": 140,
+      "attrs": {
+        "color": "green",
+        "label": "A +"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnAm",
+      "top": 280,
+      "left": 140,
+      "attrs": {
+        "color": "red",
+        "label": "A -"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnBp",
+      "top": 340,
+      "left": 140,
+      "attrs": {
+        "color": "green",
+        "label": "B +"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnBm",
+      "top": 400,
+      "left": 140,
+      "attrs": {
+        "color": "red",
+        "label": "B -"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnMenu",
+      "top": 460,
+      "left": 140,
+      "attrs": {
+        "color": "yellow",
+        "label": "Menu"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnUp",
+      "top": 220,
+      "left": 260,
+      "attrs": {
+        "color": "gray",
+        "label": "Up"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnDown",
+      "top": 280,
+      "left": 260,
+      "attrs": {
+        "color": "gray",
+        "label": "Down"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 455,
+      "left": 320,
+      "attrs": {
+        "volume": "0.15"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "battery",
+      "top": 380,
+      "left": 320,
+      "attrs": {
+        "label": "Battery ADC"
+      }
+    }
+  ],
+  "connections": [
+    ["esp:3V3", "tft:VCC", "red", []],
+    ["esp:GND.1", "tft:GND", "black", []],
+    ["esp:35", "tft:MOSI", "green", []],
+    ["esp:36", "tft:SCK", "green", []],
+    ["esp:37", "tft:CS", "green", []],
+    ["esp:38", "tft:D/C", "green", []],
+    ["esp:39", "tft:RST", "green", []],
+    ["esp:12", "tft:LED", "green", []],
+
+    ["esp:2", "btnA:1.l", "blue", []],
+    ["btnA:2.l", "esp:GND.1", "black", []],
+    ["esp:3", "btnB:1.l", "orange", []],
+    ["btnB:2.l", "esp:GND.1", "black", []],
+
+    ["esp:4", "btnAp:1.l", "green", []],
+    ["btnAp:2.l", "esp:GND.1", "black", []],
+    ["esp:5", "btnAm:1.l", "red", []],
+    ["btnAm:2.l", "esp:GND.1", "black", []],
+    ["esp:6", "btnBp:1.l", "green", []],
+    ["btnBp:2.l", "esp:GND.1", "black", []],
+    ["esp:7", "btnBm:1.l", "red", []],
+    ["btnBm:2.l", "esp:GND.1", "black", []],
+
+    ["esp:8", "btnMenu:1.l", "yellow", []],
+    ["btnMenu:2.l", "esp:GND.1", "black", []],
+    ["esp:9", "btnUp:1.l", "gray", []],
+    ["btnUp:2.l", "esp:GND.1", "black", []],
+    ["esp:10", "btnDown:1.l", "gray", []],
+    ["btnDown:2.l", "esp:GND.1", "black", []],
+
+    ["esp:11", "buzzer:1", "purple", []],
+    ["buzzer:2", "esp:GND.1", "black", []],
+
+    ["esp:3V3", "battery:VCC", "red", []],
+    ["battery:GND", "esp:GND.1", "black", []],
+    ["battery:SIG", "esp:13", "green", []]
+  ],
+  "dependencies": {}
+}

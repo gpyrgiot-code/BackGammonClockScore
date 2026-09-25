@@ -57,7 +57,7 @@ BackgammonMatchClock/
    |-- collegeb96pt7b_numbers.h
    |-- FreeSansBold48pt7b_numbers.h
    |-- FreeSans12pt7b.h
-
+```
 
 The firmware uses a custom RGB565 renderer built on the ESP-IDF RGB LCD
 peripheral. It does not require LVGL or an external TFT library.

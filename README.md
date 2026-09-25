@@ -49,21 +49,15 @@ module, battery, or ESP32.
 ## Project Layout
 
 ```text
-build-firmware-for-a-portable-backgammon/
-|-- BackgammonMatchClock/
-|   |-- BackgammonMatchClock.ino
-|   |-- splash_image.h
-|   |-- splash4.png
-|   |-- 7segment48pt7b_numbers.h
-|   |-- collegeb96pt7b_numbers.h
-|   |-- FreeSansBold48pt7b_numbers.h
-|   |-- FreeSans12pt7b.h
-|   `-- case/
-|-- WokwiMatchClock/
-|-- scripts/
-|-- platformio.ini
-`-- README.md
-```
+BackgammonMatchClock/
+   |-- BackgammonMatchClock.ino
+   |-- splash_image.h
+   |-- splash4.png
+   |-- 7segment48pt7b_numbers.h
+   |-- collegeb96pt7b_numbers.h
+   |-- FreeSansBold48pt7b_numbers.h
+   |-- FreeSans12pt7b.h
+
 
 The firmware uses a custom RGB565 renderer built on the ESP-IDF RGB LCD
 peripheral. It does not require LVGL or an external TFT library.
